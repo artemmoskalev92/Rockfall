@@ -32,6 +32,11 @@ public class DamageTaking : MonoBehaviour
                 // Создать объект в текущей позиции с текущей ориентацией.
                 Instantiate(destructionPrefab, transform.position, transform.rotation);
             }
+            // Если требуется завершить игру, вызвать метод GameOver класса GameManager.
+            if (gameOverOnDestroyed == true)
+            {
+                GameManager.instance.GameOver();
+            }
         }
     }
 }
